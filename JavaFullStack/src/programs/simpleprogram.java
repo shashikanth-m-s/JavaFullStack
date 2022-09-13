@@ -12,7 +12,6 @@ public class simpleprogram {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		
 		System.out.println("UPPERCSE AND LOWERCASE SYSOUT CONTROOL SPACE CNTRL SHIFT X and cntrl shift y");
