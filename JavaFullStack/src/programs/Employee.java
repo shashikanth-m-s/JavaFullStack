@@ -17,7 +17,7 @@ public class Employee {
 		System.out.println("Enter salary Employee");
 		Esalary=sc.nextFloat();
 		
-		System.out.println("Employee Details Are");
+		System.out.println("Employee Details");
 		System.out.println( "name="+Ename);
 		System.out.println("age="+Eage);
 		System.out.println("salary="+Esalary);

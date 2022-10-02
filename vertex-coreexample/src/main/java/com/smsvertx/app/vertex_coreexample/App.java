@@ -21,13 +21,14 @@ public class App
         
         Router router=Router.router(vrtx);
         
-        Route hand=router.route().handler(RoutingContext->{
+        Route hand=router.route("/getMessage").handler(RoutingContext->{
         	
         	HttpServerResponse resp=RoutingContext.response();
         	resp.setChunked(true).write("hello");
+        	resp.end();
         	
         });
-        server.requestHandler(router).listen(998);
+        server.requestHandler(router).listen(9090);
         
     }
 }
