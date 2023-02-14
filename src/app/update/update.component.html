@@ -1,0 +1,111 @@
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">
+    <img src="favicon.ico" alt="logo" style="width:40px;">
+  </a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/register">Register</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/search">Search & Delete</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/update">update</a>
+    </li>
+    
+  </ul>
+</nav>
+
+  
+  
+
+    
+<form>
+    <div style="text-align: center">
+        <h1>{{message}}</h1>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form #myForm="ngForm">
+                    <fieldset>
+                        <legend class="text-center">Valid information is required to Update. <span class="req"><small>
+                                    required *</small></span></legend>
+    
+                        <div class="form-group">
+                            <label for="Name"><span class="req">* </span> Name: <small>This will be your user
+                                    name</small> </label>
+                            <input required ngModel type="text" #name="ngModel" [(ngModel)]="user.name" name="name" id="name"
+                                class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
+                            <div class="alert alert-danger" *ngIf="name.touched && ! name.valid">
+                                    Name is required
+                            </div> 
+                              
+                        </div>
+                        
+    
+                        <div class="form-group">
+                            <label for="email"><span class="req">* </span> Email: </label>
+                            <input class="form-control" required #email="ngModel" type="email" #name="ngModel" [(ngModel)]="user.email" name="email" id="email" required
+                                placeholder="Enter valid email address" />
+                                <div class="alert alert-danger" *ngIf="email.touched &&!email.valid">email required</div>
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastname"><span class="req">* </span> Experience : </label>
+                            <input class="form-control" required #experience="ngModel" type="text" [(ngModel)]="user.experience" name="experience" id="txt"
+                                placeholder="Total year of experience" required min="0" oninput="validity.valid||(value='');"
+                                />
+                            <div id="errLast"></div>
+    
+                            <div class="alert alert-danger" *ngIf="experience.touched && ! experience.valid">
+                                Experience is required
+                        </div> 
+    
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="email"><span class="req">* </span> Developer: </label>
+                            <input class="form-control" required type="text" [(ngModel)]="user.domain" name="domain"
+                                id="email" placeholder="fullstack/backend/developer" />
+                            <div class="status" id="status"></div>
+                        </div>
+                     <div class="form-group">
+                            <input class="btn btn-success" [disabled]="myForm.invalid"
+                            type="submit" name="submit_reg" value="Update" (click)="updateUser()">
+                        </div> 
+                    </fieldset>
+                </form><!-- ends register form -->
+                <!-- second for to fiter user-->
+            </div><!-- ends col-6 -->
+    
+        </div>
+    </div>
+    
+    <div>
+    
+        <a class="nav-link" routerLink="/home">Home</a>
+    </div>
+    </form>
+ 
