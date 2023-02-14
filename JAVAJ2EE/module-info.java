@@ -1,0 +1,2 @@
+module shailu.student {
+}
